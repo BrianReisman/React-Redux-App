@@ -25,9 +25,9 @@ export const reducer = (state = initialState, action) => {
         isFetching: false,
         imageDetails: action.payload,
       };
-    case GET_FAIL:
-      return state;
-    // isFetching: false,
+    // case GET_FAIL:
+    //   return state;
+    // // isFetching: false,
     default:
       return state;
   }

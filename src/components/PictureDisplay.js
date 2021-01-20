@@ -8,11 +8,14 @@ const PictureDisplay = (props) => {
   };
   return (
     <div>
-      <h1>hi</h1>
+      <button onClick={clickHandler}>buttttton</button>
       {props.imageDetails[0].download_url ? (
-        <img src={props.imageDetails[0].download_url} alt="alt text" />
+        <img
+          style={{ width: "300px", display: "block" }}
+          src={props.imageDetails[0].download_url}
+          alt="alt text"
+        />
       ) : null}
-      <button onClick={clickHandler}>button</button>
     </div>
   );
 };
