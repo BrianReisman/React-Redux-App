@@ -22,11 +22,12 @@ export const getData = (searchText) => {
     axios
       .get("https://api.taylor.rest/")
       .then((res) => {
-        console.log(res);
+        console.log(res.data.quote);
+        dispatch(fetchDataSuccess(res.data.quote))
       })
       .catch((err) => {
         console.log(err);
+        dispatch(fetchDataFail())
       });
   };
-  // return {type: GET_DATA, payload: searchText}
 };

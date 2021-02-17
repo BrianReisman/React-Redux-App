@@ -1,11 +1,19 @@
 import React from 'react';
+import {connect} from 'react-redux';
 
 const Display = (props) => {
+
   return(
-    <div>
-      test from Display.js
+    <div style={{color: 'white', width: '30%'}}>
+      {props.quote}
     </div>
 )
 };
 
-export default Display;
+const mapStateToProps = (state) => {
+  return {
+    quote: state.quote
+  }
+}
+
+export default connect(mapStateToProps)(Display);

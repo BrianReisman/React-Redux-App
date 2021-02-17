@@ -1,7 +1,9 @@
 import * as actions from "./actions";
 
 const initState = {
-  asdf: "asdf",
+  quote: "",
+  isLoading: false,
+  error: "",
 };
 
 export const reducer = (state = initState, action) => {
@@ -12,9 +14,22 @@ export const reducer = (state = initState, action) => {
     case actions.FETCH_DATA_START:
       return {
         ...state,
-        test: "test - fetch data Start",
+        isLoading: true,
+        error: "",
       };
-
+    case actions.FETCH_DATA_SUCCESS:
+      return {
+        ...state,
+        quote: action.payload,
+        isLoading: false,
+        error: "",
+      };
+    case actions.FETCH_DATA_FAIL:
+      return {
+        ...state,
+        isLoading: false,
+        error: "What did you do?!!",
+      };
     default:
       return state;
   }
